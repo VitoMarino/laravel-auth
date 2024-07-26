@@ -1,7 +1,12 @@
 <?php
 
+// ADMIN
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
+
+//GUEST
 use App\Http\Controllers\HomeController as GuestHomeController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +35,6 @@ Route::middleware('auth')->name('admin.')->prefix('admin/')->group(
 
 
         // Mi creo anche una risorsa
-
+        Route::resource('/projects', AdminProjectController::class);
     }
 );
