@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -24,6 +26,7 @@ class ProjectController extends Controller
     public function create()
     {
         //
+        return view("admin.projects.create");
     }
 
     /**
@@ -32,14 +35,23 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+        $data['name'] = Auth::user()->name;
+        $data['date'] = Carbon::now();
+        $newProject = Project::create($data);
+
+        return redirect()->route('admin.projects.show', $newProject);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Project $project)
     {
         //
+
+        return view("admin.projects.show", compact("project"));
+
     }
 
     /**
