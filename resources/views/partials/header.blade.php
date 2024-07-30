@@ -4,6 +4,12 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
+            <a href="{{route('admin.projects.index')}}" class="me-2">
+                Home
+            </a>
+            <a href="{{ route('admin.projects.create') }}" class="btn btn-info btn-sm d-flex align-items-center">
+                Create new project
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
@@ -50,7 +56,6 @@
                             </div>
                         </li>
                     @endguest
-                </ul>
             </div>
         </div>
     </nav>

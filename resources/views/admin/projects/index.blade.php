@@ -13,7 +13,6 @@
                             <th scope="col">Date</th>
                             <th scope="col">Show</th>
                             <th scope="col">Edit</th>
-                            <th scope="col">Create</th>
                             <th scope="col">Delete</th>
 
                         </tr>
@@ -34,11 +33,6 @@
                                 <td>
                                     <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-success btn-sm">
                                         Edit
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="{{ route('admin.projects.create', $project) }}" class="btn btn-info btn-sm">
-                                        Create
                                     </a>
                                 </td>
                                 <td>
